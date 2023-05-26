@@ -5,6 +5,9 @@
   import AppMain from './components/AppMain.vue'
   import AppFooter from './components/AppFooter.vue'
 
+  import {store} from './data/store.js'
+  import axios from 'axios' 
+
   // export *********
   export default  {
     name: 'App',
@@ -13,37 +16,47 @@
       AppMain,
       AppFooter
     },
-
+    
     data() {
       return {
-        // 
+        store,
       }
     },
 
-    methods: {
+    created() {
+      console.log('App created', this.store.SearchInput); 
+    },
+
+    methods : {
       // 
     },
 
     mounted() {
-      // 
-    },
-
+      //
+    },     
   }
 
 </script>
 
 <!-- template -->
 <template>
+
   <header>
-    <AppHeader msg="Header" />
+
+    <AppHeader />
+    
   </header>
 
   <main>
-    <AppMain msg="Main" />
+
+    <AppMain />
+    
   </main>
   
   <footer>
-    <AppFooter msg="Footer" />
+    
+    <AppFooter />
+  
   </footer>
 
 </template>
@@ -60,7 +73,7 @@ header {
 }
 
 main {
-  background-color: $color-primary;
+  // background-color: $color-primary;
   padding: 1rem;
 }
 
