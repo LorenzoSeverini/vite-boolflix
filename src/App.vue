@@ -73,7 +73,7 @@ header {
 }
 
 main {
-  // background-color: $color-primary;
+  background-color: $color-black;
   padding: 1rem;
 }
 
