@@ -27,6 +27,7 @@ import axios from 'axios';
         axios.get(`${this.store.ApiUrl}movie?api_key=${this.store.ApiKey}&query=${this.searchInput}`)
         .then((response) => {
           const result = response.data.results;
+          this.store.Movies = result;
           console.log('Movies result :', result);
         })
         .catch((error) => {
@@ -38,6 +39,7 @@ import axios from 'axios';
         axios.get(`${this.store.ApiUrl}tv?api_key=${this.store.ApiKey}&query=${this.searchInput}`)
         .then((response) => {
           const result = response.data.results;
+          this.store.SeriesTv = result;
           console.log('Series Tv result :', result);
         })
         .catch((error) => {
