@@ -57,7 +57,7 @@ import axios from 'axios';
   <h1>{{ title }}</h1>
   <!-- search bar e pulsante per visualizzare la lista dei film -->
   <div class="search-box">
-    <input v-model="searchInput" class="search-bar" type="text" placeholder="Search a Movie" @keyup.enter="search">
+    <input v-model="searchInput" class="search-bar" type="text" placeholder="Search movie and series tv" @keyup.enter="search">
     <button class="btn-search" @click="search">Search</button>
   </div>
 
@@ -72,29 +72,31 @@ import axios from 'axios';
 h1 {
   color: $color-primary;
   font-size: 5rem;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+  font-weight: $font-weight-bold;
+  text-align: start;
+  cursor: pointer;
+  padding-left: 1rem;
 }
 
 .search-box {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   margin: 2rem 0;
   gap: 1rem;
+  padding-left: 1rem;
 
   .search-bar {
-    width: 50%;
+    width: 30rem;
     padding: 0.5rem;
     border: 1px solid $color-primary;
     border-radius: 5px;
     outline: none;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     color: $color-primary;
     text-align: center;
+    padding-left: 1rem;
 
     &:focus {
       border: 1px solid $color-secondary;
@@ -107,7 +109,7 @@ h1 {
     border-radius: 5px;
     outline: none;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     color: $color-primary;
     background-color: $color-secondary;
     cursor: pointer;
