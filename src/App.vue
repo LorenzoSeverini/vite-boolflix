@@ -6,7 +6,7 @@
   import AppFooter from './components/AppFooter.vue'
 
   import {store} from './data/store.js'
-  import axios from 'axios' 
+ 
 
   // export *********
   export default  {
