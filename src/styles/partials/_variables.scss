@@ -3,9 +3,6 @@
 // COLORS
 $color-primary: #aa0106;
 $color-secondary: #1b1b1b;
-$color-tertiary: #b83b5e;
-$color-quaternary: #6a2c70;
-$color-quinary: #1e1f26;
 
 $color-danger: #ff0000;
 $color-success: #00ff00;
@@ -13,32 +10,12 @@ $color-warning: #ffff00;
 
 $color-info: #00ffff;
 $color-white: #fff;
-$color-black: #000;
-
-// FONT
-$font-primary: 'Roboto', sans-serif;
-
-// FONT-SIZE
-$default-font-size: 1.6rem;
-$small-font-size: 1.4rem;
-$large-font-size: 1.8rem;
+$color-black: #3a3a3a;
 
 // FONT-WEIGHT
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 
-// FONT-DECORATION
-$font-decoration-none: none;
-$font-decoration-underline: underline;
-$font-decoration-overline: overline;
-
-// FONT-STYLE
-$font-style-normal: normal;
-$font-style-italic: italic;
-
 // BORDER
 $border-radius: 0.5rem;
-$border-width: 0.1rem;
-$border-style: solid;
-$border-color: $color-quinary;

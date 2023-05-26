@@ -177,7 +177,7 @@ h1 {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                border-radius: 1rem;
+                border-radius: $border-radius;
                 box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
             }
 
