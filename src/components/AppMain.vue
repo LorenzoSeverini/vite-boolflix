@@ -3,9 +3,15 @@
 
 import {store} from '../data/store.js'
 
+import AppHeader from './AppHeader.vue'
+
 
     export default {
         name: 'AppMain',
+
+        components: {
+            AppHeader,
+        },
         
         data () {
             return {
@@ -14,6 +20,7 @@ import {store} from '../data/store.js'
         },
 
         methods : {
+            //
             
         },
 
