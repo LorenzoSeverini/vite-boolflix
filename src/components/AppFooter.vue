@@ -1,16 +1,16 @@
 <!-- script -->
 <script>
 
+import {store} from '../data/store.js'
+import axios from 'axios'
+
     export default {
         name: 'AppFooter',
         
-        props: {
-            msg: String
-        },
-
         data () {
             return {
-                //
+                store,
+                Footer : 'Footerrrrr',
             }
         },
     }
@@ -19,7 +19,7 @@
 
 <!-- template -->
 <template>
-    <h1>{{ msg }}</h1>
+    <h1>{{ Footer }}</h1>
 </template>
 
 <!-- style -->
@@ -29,7 +29,7 @@
 @use '../styles/partials/_mixing' as *;
 
 h1 {
-    color: $color-tertiary;
+    color: $color-primary;
     font-size: 5rem;
     font-weight: 700;
     margin: 0;
