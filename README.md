@@ -1,3 +1,1 @@
-# Starter vite-vue
-
-import axios / scss /
+# Netflix Clone with Vite-Vue3
