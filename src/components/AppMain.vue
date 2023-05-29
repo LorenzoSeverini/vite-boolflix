@@ -88,9 +88,9 @@ import AppHeader from './AppHeader.vue'
                                 <a v-for="star in 5 - changeInStars(movie.vote_average)" class="far fa-star"></a>  
                             </div>
                             <!-- original Lang   -->
-                            <span>Original language: <p :class="FlagIcon(movie.original_language)"></p></span>
+                            <span class="language">Original language: <p :class="FlagIcon(movie.original_language)"></p></span>
                             <!-- release date-->
-                            <p>Release date: {{ releaseDate(movie.release_date) }}</p>
+                            <p class="release">Release date: {{ releaseDate(movie.release_date) }}</p>
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@ import AppHeader from './AppHeader.vue'
                             <!-- original Lang   -->
                             <span class="language">Original language: <p class="flag" :class="FlagIcon(serie.original_language)"></p></span>
                             <!-- release date-->
-                            <p>Release date: {{ releaseDate(serie.release_date) }}</p>
+                            <p class="release">Release date: {{ releaseDate(serie.release_date) }}</p>
                         </div>
                     </div>
                 </div>
@@ -181,7 +181,7 @@ h1 {
         text-align: center;
     }
     .card {
-        width: calc(100% /5 - 2rem);
+        width: calc(100% /10 - 2rem);
         position: relative;
         
         .card-img {
@@ -292,7 +292,246 @@ h1 {
                             text-align: center;
                         }
                     }
+
+                    .release {
+                        color: $color-secondary;
+                        font-size: 1.5rem;
+                        font-weight: $font-weight-bold;
+                        margin: 0;
+                        padding: 0;
+                        text-align: center;
+                    }
+
+                    .genre {
+                        color: $color-secondary;
+                        font-size: 1.5rem;
+                        font-weight: $font-weight-bold;
+                        margin: 0;
+                        padding: 0;
+                        text-align: center;
+                    }
+
                 }         
+            }
+        }
+    }
+}
+
+// max 1980px
+@media screen and (max-width: 123.75rem) {
+    .movie, .series-tv {
+        .card {
+            width: calc(100% /8 - 2rem);
+
+            .card-img {
+                .overlay {
+                    .text {
+                        .card-title {
+                            h2 {
+                                font-size: 1.5rem;
+                            }
+                            p {
+                                font-size: 1rem;
+                            }
+                        }
+                        .overview {
+                            font-size: 1rem;
+                        }
+                        .rating {
+                            font-size: 1rem;
+                        }
+                        .language {
+                            font-size: 1rem;
+                            .flag {
+                                font-size: 1rem;
+                            }
+                        }
+                        .release {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// max 1440px
+@media screen and (max-width: 90rem) {
+    .movie, .series-tv {
+        .card {
+            width: calc(100% /5 - 2rem);
+
+            .card-img {
+                .overlay {
+                    .text {
+                        .card-title {
+                            h2 {
+                                font-size: 1.5rem;
+                            }
+                            p {
+                                font-size: 1rem;
+                            }
+                        }
+                        .overview {
+                            font-size: 1rem;
+                        }
+                        .rating {
+                            font-size: 1rem;
+                        }
+                        .language {
+                            font-size: 1rem;
+                            .flag {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+// max 1024px
+@media screen and (max-width: 64rem) {
+    .movie, .series-tv {
+        .card {
+            width: calc(100% / 5 - 2rem);
+
+            .card-img {
+                .overlay {
+                    .text {
+                        .card-title {
+                            h2 {
+                                font-size: 1.5rem;
+                            }
+                            p {
+                                font-size: 1rem;
+                            }
+                        }
+                        .overview {
+                            font-size: 1rem;
+                        }
+                        .rating {
+                            font-size: 1rem;
+                        }
+                        .language {
+                            font-size: 1rem;
+                            .flag {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// max 768px
+@media screen and (max-width: 48rem) {
+    .movie, .series-tv {
+        .card {
+            width: calc(100% /3 - 2rem);
+
+            .card-img {
+                .overlay {
+                    .text {
+                        .card-title {
+                            h2 {
+                                font-size: 1.5rem;
+                            }
+                            p {
+                                font-size: 1rem;
+                            }
+                        }
+                        .overview {
+                            font-size: 1rem;
+                        }
+                        .rating {
+                            font-size: 1rem;
+                        }
+                        .language {
+                            font-size: 1rem;
+                            .flag {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// max 480px
+@media screen and (max-width: 30rem) {
+    .movie, .series-tv {
+        .card {
+            width: calc(100% /2 - 2rem);
+
+            .card-img {
+                .overlay {
+                    .text {
+                        .card-title {
+                            h2 {
+                                font-size: 1.5rem;
+                            }
+                            p {
+                                font-size: 1rem;
+                            }
+                        }
+                        .overview {
+                            font-size: 1rem;
+                        }
+                        .rating {
+                            font-size: 1rem;
+                        }
+                        .language {
+                            font-size: 1rem;
+                            .flag {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// max 320px
+@media screen and (max-width: 20rem) {
+    .movie, .series-tv {
+        .card {
+            width: calc(100% - 2rem);
+
+            .card-img {
+                .overlay {
+                    .text {
+                        .card-title {
+                            h2 {
+                                font-size: 1.5rem;
+                            }
+                            p {
+                                font-size: 1rem;
+                            }
+                        }
+                        .overview {
+                            font-size: 1rem;
+                        }
+                        .rating {
+                            font-size: 1rem;
+                        }
+                        .language {
+                            font-size: 1rem;
+                            .flag {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
