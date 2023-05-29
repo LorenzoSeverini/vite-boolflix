@@ -6,6 +6,7 @@ import { flagsData } from '../data/flags-data'
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import AppHeader from './AppHeader.vue'
 
+
     export default {
         name: 'AppMain',
 
@@ -16,7 +17,7 @@ import AppHeader from './AppHeader.vue'
         data () {
             return {
                 store,
-                flagsData,  
+                flagsData, 
             }
         },
 
@@ -38,6 +39,20 @@ import AppHeader from './AppHeader.vue'
                 } else {
                     return 'https://via.placeholder.com/185x278?text=No+Image';
 
+                }
+            },
+
+            // transform vote in stars 
+            changeInStars(vote) {
+                return Math.ceil(vote / 2);   
+            },
+
+            // release date only year
+            releaseDate(date) {
+                if (date) {
+                    return date.slice(0, 4);
+                } else {
+                    return 'Unknown';
                 }
             },
         },
@@ -65,15 +80,17 @@ import AppHeader from './AppHeader.vue'
                                 <p>Original Title: {{ movie.original_title }}</p>
                             </div>
                             <!-- overview  -->
-                            <p>overview: {{ movie.overview }}</p>
+                            <p class="overview">overview: {{ movie.overview }}</p>
                             <!-- vote  -->
                             <div class="rating">
-                                <p>{{ movie.vote_average }}</p>
+                                <!-- fa star  -->
+                                <a v-for="star in changeInStars(movie.vote_average)" class="fas fa-star"></a>
+                                <a v-for="star in 5 - changeInStars(movie.vote_average)" class="far fa-star"></a>  
                             </div>
                             <!-- original Lang   -->
                             <span>Original language: <p :class="FlagIcon(movie.original_language)"></p></span>
                             <!-- release date-->
-                            <p>Release date: {{ movie.release_date }}</p> 
+                            <p>Release date: {{ releaseDate(movie.release_date) }}</p>
                         </div>
                     </div>
                 </div>
@@ -92,19 +109,21 @@ import AppHeader from './AppHeader.vue'
                         <div class="text">
                             <!-- title  -->
                             <div class="card-title">
-                                <h2>Title: {{ serie.title }}</h2>
-                                <p>Original Title: {{ serie.original_title }}</p>
+                                <h2>Title: {{ serie.name }}</h2>
+                                <p>Original Title: {{ serie.original_name }}</p>
                             </div>
                             <!-- overview  -->
-                            <p>overview: {{ serie.overview }}</p>
+                            <p class="overview"> {{ serie.overview }}</p>
                             <!-- vote  -->
                             <div class="rating">
-                                <p>{{ serie.vote_average }}</p>
+                                 <!-- fa star  -->
+                                <a v-for="star in changeInStars(serie.vote_average)" class="fas fa-star"></a>
+                                <a v-for="star in 5 - changeInStars(serie.vote_average)" class="far fa-star"></a>  
                             </div>
                             <!-- original Lang   -->
-                            <span>Original language: <p :class="FlagIcon(serie.original_language)"></p></span>
+                            <span class="language">Original language: <p class="flag" :class="FlagIcon(serie.original_language)"></p></span>
                             <!-- release date-->
-                            <p>Release date: {{ serie.release_date }}</p> 
+                            <p>Release date: {{ releaseDate(serie.release_date) }}</p>
                         </div>
                     </div>
                 </div>
@@ -127,7 +146,7 @@ import AppHeader from './AppHeader.vue'
 }
 
 .title-section {
-    color: $color-secondary;
+    color: $color-warning;
     font-size: 3rem;
     font-weight: $font-weight-bold;
     text-align: start;
@@ -194,7 +213,7 @@ h1 {
 
                 &:hover {
                     opacity: 1;
-                    background-color: rgba(207, 30, 30,);
+                    background-color: rgb(87, 87, 87);
                 }
 
                 .text {
@@ -230,13 +249,19 @@ h1 {
                         }
                     }
 
-                    p {
+                    .overview {
                         color: $color-secondary;
                         font-size: 1.5rem;
                         font-weight: $font-weight-bold;
                         margin: 0;
                         padding: 0;
                         text-align: center;
+                        // word-break: break-all;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 5;
+                        -webkit-box-orient: vertical;
                     }
 
                     .rating {
@@ -250,16 +275,7 @@ h1 {
                         text-align: center;
                     }
 
-                    span {
-                        color: $color-secondary;
-                        font-size: 1.5rem;
-                        font-weight: $font-weight-bold;
-                        margin: 0;
-                        padding: 0;
-                        text-align: center;
-                    }
-
-                    p {
+                    .language {
                         color: $color-secondary;
                         font-size: 1.5rem;
                         font-weight: $font-weight-bold;
@@ -267,7 +283,7 @@ h1 {
                         padding: 0;
                         text-align: center;
 
-                        &.vote {
+                        .flag {
                             color: $color-secondary;
                             font-size: 1.5rem;
                             font-weight: $font-weight-bold;
