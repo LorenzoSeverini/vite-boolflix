@@ -59,5 +59,11 @@ import axios from 'axios'
     }
 }
 
+// max 768px
+@media screen and (max-width: 48rem) {
+    .app-footer {
+        padding: 20px 0;
+    }
+}
 
 </style>
