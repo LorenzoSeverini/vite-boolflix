@@ -122,4 +122,17 @@ h1 {
   }
 }
 
+// max 768px 
+@media screen and (max-width: 48rem) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .search-box {
+    .search-bar {
+      width: 20rem;
+    }
+  }
+}
+
 </style>
