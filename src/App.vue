@@ -77,6 +77,7 @@ main {
   padding: 1rem;
   height: calc(100vh - 9.1875rem - 4.875rem - 80px);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 footer {
