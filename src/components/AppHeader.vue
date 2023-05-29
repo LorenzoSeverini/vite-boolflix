@@ -55,7 +55,7 @@ import axios from 'axios';
 <template>
 
   <h1>{{ title }}</h1>
-  <!-- search bar e pulsante per visualizzare la lista dei film -->
+
   <div class="search-box">
     <input v-model="searchInput" class="search-bar" type="text" placeholder="Search movie and series tv" @keyup.enter="search">
     <button class="btn-search" @click="search">Search</button>
